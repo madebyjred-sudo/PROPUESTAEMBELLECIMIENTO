@@ -429,25 +429,32 @@ export const Aceleradores = () => {
         <motion.div style={{ y: y1 }} className="glass-panel p-8 md:p-12 space-y-8 md:space-y-10 flex flex-col h-full">
           <div className="space-y-4">
             <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 mb-6 md:mb-8">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
             </div>
-            <h3 className="text-3xl md:text-4xl font-light tracking-tight text-white">Producción Visual Before/After</h3>
-            <p className="text-xl md:text-2xl font-light text-secondary">$1.300.000 COP</p>
+            <h3 className="text-3xl md:text-4xl font-light tracking-tight text-white">Sitio Web Landing Page</h3>
+            <div className="space-y-1">
+              <p className="text-xl md:text-2xl font-light text-secondary">$699.000 COP <span className="text-sm line-through text-white/30 ml-2">$1.200.000</span></p>
+              <p className="text-[10px] md:text-xs text-secondary/80 uppercase tracking-widest font-bold">42% DESCUENTO CON PLANES ACTIVOS</p>
+            </div>
           </div>
-          <p className="text-white/60 font-light text-sm md:text-base flex-grow">Sesión única editorial/cinematic para elevar la percepción de valor inmediatamente:</p>
+          <p className="text-white/60 font-light text-sm md:text-base flex-grow">Tu vitrina digital profesional operando 24/7:</p>
           <ul className="space-y-4 md:space-y-6 text-sm md:text-base text-white/80 font-light">
             <li className="border-l border-white/20 pl-4 md:pl-6">
-              <strong className="block text-white/90 font-medium mb-1">Fotografía de 10-15 vehículos</strong>
-              <span className="text-white/60">Diferentes servicios con iluminación de studio y reflejos controlados.</span>
+              <strong className="block text-white/90 font-medium mb-1">Arquitectura de Alta Conversión</strong>
+              <span className="text-white/60">Diseño responsive, optimización SEO básica y catálogos de servicios técnicos.</span>
             </li>
             <li className="border-l border-white/20 pl-4 md:pl-6">
-              <strong className="block text-white/90 font-medium mb-1">Detalle macro</strong>
-              <span className="text-white/60">Fotos de texturas PPF y acabados cerámicos. 50+ fotos + 10 videos cortos.</span>
+              <strong className="block text-white/90 font-medium mb-1">Ecosistema Integrado</strong>
+              <span className="text-white/60">Integración fluida con WhatsApp, formularios de agendamiento y hosting profesional por 1 año.</span>
             </li>
           </ul>
-          <div className="pt-6 md:pt-8 mt-6 md:mt-8 border-t border-white/10">
-            <p className="text-white/40 font-light text-xs md:text-sm leading-relaxed">
-              * Impacto: El contenido amateur espanta clientes premium. Esta sesión garantiza una vitrina de clase mundial.
+          <div className="pt-6 md:pt-8 mt-6 md:mt-8 border-t border-secondary/30 bg-secondary/5 p-4 rounded-lg">
+            <p className="text-white/90 font-medium text-sm mb-2 flex items-center gap-2">
+              <svg className="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" /></svg>
+              Sinergia Perfecta + Chatbot IA
+            </p>
+            <p className="text-white/70 font-light text-xs md:text-sm leading-relaxed">
+              Mientras la Landing Page proyecta el estatus premium de tu taller, el <strong>Asistente IA califica y atiende visitantes en tiempo real</strong>. Esta combinación captura leads a cualquier hora, logrando que el cliente tenga una respuesta técnica inmediata sin que muevas un dedo.
             </p>
           </div>
         </motion.div>
