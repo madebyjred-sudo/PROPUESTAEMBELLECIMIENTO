@@ -74,27 +74,39 @@ export default function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
 
-  return (
-    <main ref={containerRef} className="w-full relative bg-primary">
-      <div className="fixed inset-0 -z-20 bg-primary"></div>
+  // Dynamic visual effects for the background video based on scroll
+  const videoBlur = useTransform(scrollYProgress, [0.8, 0.95], ['blur(12px)', 'blur(0px)']);
+  const overlayOpacity = useTransform(scrollYProgress, [0.8, 0.95], [0.85, 0.2]);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1.3, 1.1]);
 
-      {/* Video Background for Hero */}
-      <div className="absolute top-0 left-0 w-full h-screen -z-15 pointer-events-none overflow-hidden">
-        <iframe
-          src="https://www.youtube.com/embed/H0L_6o-Wz0s?autoplay=1&mute=1&controls=0&loop=1&playlist=H0L_6o-Wz0s&showinfo=0&modestbranding=1&rel=0"
-          className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale"
-          style={{ transform: 'scale(1.5)', pointerEvents: 'none' }}
+  return (
+    <main ref={containerRef} className="w-full relative bg-transparent">
+      <div className="fixed inset-0 -z-30 bg-primary"></div>
+
+      {/* Video Background Fixed */}
+      <motion.div
+        className="fixed inset-0 -z-20 pointer-events-none overflow-hidden"
+        style={{ filter: videoBlur }}
+      >
+        <motion.iframe
+          src="https://www.youtube.com/embed/eMBlkjCA298?autoplay=1&mute=1&controls=0&loop=1&playlist=eMBlkjCA298&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ scale: videoScale, pointerEvents: 'none' }}
           frameBorder="0"
           allow="autoplay; fullscreen"
           allowFullScreen
-        ></iframe>
-        {/* Gradients to blend the video into the background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-primary"></div>
-      </div>
+        ></motion.iframe>
+        {/* Transparent shield to absolutely block any interaction */}
+        <div className="absolute inset-0 z-10 w-full h-full bg-transparent" style={{ pointerEvents: 'auto' }}></div>
+      </motion.div>
 
-      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(201,169,98,0.05),rgba(0,0,0,0)_50%)]"></div>
+      {/* Dynamic Dark Overlay */}
+      <motion.div
+        className="fixed inset-0 -z-15 bg-primary pointer-events-none"
+        style={{ opacity: overlayOpacity }}
+      ></motion.div>
+
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(201,169,98,0.05),rgba(0,0,0,0)_50%)] pointer-events-none"></div>
 
       <Navigation
         sections={sections}
