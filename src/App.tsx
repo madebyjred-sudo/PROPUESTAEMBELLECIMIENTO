@@ -69,10 +69,64 @@ function Section({
   );
 }
 
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
+
 export default function App() {
   const [activeSection, setActiveSection] = useState(sections[0].id);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
+
+  // Load YouTube API and setup player
+  useEffect(() => {
+    // Load script if not already loaded
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+    }
+
+    window.onYouTubeIframeAPIReady = () => {
+      new window.YT.Player('youtube-player', {
+        videoId: 'eMBlkjCA298',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          loop: 1,
+          playlist: 'eMBlkjCA298',
+          showinfo: 0,
+          modestbranding: 1,
+          rel: 0,
+          disablekb: 1,
+          iv_load_policy: 3,
+          playsinline: 1
+        },
+        events: {
+          onReady: (event: any) => {
+            event.target.playVideo();
+            event.target.setPlaybackRate(0.5); // Half speed
+          },
+          onStateChange: (event: any) => {
+            // If the video loops or resets, ensure it stays at half speed
+            if (event.data === window.YT.PlayerState.PLAYING) {
+              event.target.setPlaybackRate(0.5);
+            }
+          }
+        }
+      });
+    };
+
+    // If YT is already ready (e.g. strict mode re-mount), initialize manually
+    if (window.YT && window.YT.Player && !document.getElementById('youtube-player')?.hasChildNodes()) {
+      window.onYouTubeIframeAPIReady();
+    }
+  }, []);
 
   // Dynamic visual effects for the background video based on scroll
   const videoBlur = useTransform(scrollYProgress, [0.8, 0.95], ['blur(12px)', 'blur(0px)']);
@@ -88,14 +142,11 @@ export default function App() {
         className="fixed inset-0 -z-20 pointer-events-none overflow-hidden"
         style={{ filter: videoBlur }}
       >
-        <motion.iframe
-          src="https://www.youtube.com/embed/eMBlkjCA298?autoplay=1&mute=1&controls=0&loop=1&playlist=eMBlkjCA298&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3"
+        <motion.div
+          id="youtube-player"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ scale: videoScale, pointerEvents: 'none' }}
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-        ></motion.iframe>
+          style={{ scale: videoScale, pointerEvents: 'none', width: '100vw', height: '100vh', transform: 'scale(1.5)' }} // extra scale to hide iframe borders just in case
+        ></motion.div>
         {/* Transparent shield to absolutely block any interaction */}
         <div className="absolute inset-0 z-10 w-full h-full bg-transparent" style={{ pointerEvents: 'auto' }}></div>
       </motion.div>
