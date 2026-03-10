@@ -128,15 +128,15 @@ export const CartaPresentacion = () => (
 
     <div className="space-y-8 md:space-y-10 text-lg md:text-xl text-white/70 font-light leading-relaxed">
       <motion.p variants={fadeInUp}>
-        El mercado de vehículos de gama alta en Bogotá no se mueve por casualidad. Los dueños de Porsche, BMW, Mercedes y camionetas de lujo buscan protección y personalización, pero antes de llegar a Alpha Cars, pasan 3 semanas investigando online.
+        El mercado de vehículos de alta gama en Bogotá funciona con clientes que investigan antes de tomar una decisión. Los dueños de Porsche, BMW, Mercedes y camionetas premium suelen pasar varias semanas buscando opciones online antes de elegir dónde realizar servicios como PPF, wrapping o corrección de pintura.
       </motion.p>
 
       <motion.p variants={fadeInUp}>
-        Esta propuesta no es sobre 'hacer posts bonitos'. Es sobre construir un sistema técnico de captación donde cada pieza tiene un propósito: traer vehículos de alto valor a su centro de embellecimiento.
+        Esta propuesta no se enfoca en hacer publicaciones estéticas, sino en construir un sistema digital que permita atraer a esos clientes y dirigirlos hacia Alpha Cars.
       </motion.p>
 
       <motion.p variants={fadeInUp}>
-        Ustedes dominan el PPF, el wrapping perfecto y la corrección de pintura. Nosotros dominamos la captación digital de clientes que pagan premium por esos servicios.
+        Alpha Cars tiene la capacidad técnica para atender vehículos de alto valor. Nuestra función es desarrollar la estrategia digital para captar a ese tipo de cliente y convertir su interés en visitas y servicios.
       </motion.p>
 
       <motion.div
@@ -343,6 +343,29 @@ export const Propuestas = () => {
         </motion.p>
       </div>
 
+      <motion.div variants={fadeInUp} className="glass-panel p-8 md:p-10 border-l-2 border-l-secondary relative overflow-hidden group mb-12">
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-transparent opacity-100" />
+        <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center justify-between">
+          <div className="space-y-3 flex-grow">
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-secondary font-bold">Fase 1: Implementación</p>
+            <h3 className="text-2xl md:text-3xl font-light tracking-tight text-white mb-2">Setup Inicial Estratégico</h3>
+            <p className="text-white/70 font-light text-sm md:text-base leading-relaxed max-w-2xl">
+              Estudio de Mercado, Estrategia Publicitaria a 3 meses, Auditoría de Competencia y Configuración Técnica Completa de los ecosistemas operativos (Meta/Google).
+            </p>
+          </div>
+          <div className="shrink-0 text-left md:text-right">
+            <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1 flex items-center md:justify-end gap-2"><span className="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse"></span> INVERSIÓN ÚNICA (MES 1)</p>
+            <p className="text-3xl md:text-4xl font-light text-secondary mb-1">$1.000.000 <span className="text-base text-white/50">COP</span></p>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="space-y-4 mb-12">
+        <motion.h3 variants={fadeInUp} className="text-xl md:text-2xl text-white font-light tracking-tight flex items-center gap-4 pt-8 border-t border-white/10">
+          Fase 2: Mensualidades Operativas (Seleccionar un plan)
+        </motion.h3>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {/* PLAN BÁSICO */}
         <motion.div
@@ -355,7 +378,7 @@ export const Propuestas = () => {
             <h4 className="text-3xl font-light tracking-tight text-white group-hover:text-secondary transition-colors">Validación Inteligente</h4>
             <div className="space-y-1">
               <p className="text-2xl font-light text-white/90 group-hover:text-white transition-colors">$1.800.000 <span className="text-sm text-white/40">COP/mes</span></p>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta ($800k - $1.2M)</p>
+              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta (Monto según estrategia)</p>
             </div>
           </div>
 
@@ -364,10 +387,9 @@ export const Propuestas = () => {
               <h5 className="text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Incluye:</h5>
               <ul className="space-y-4 text-sm text-white/60 font-light">
                 <li className="flex items-start gap-3"><span className="text-secondary">✓</span> 16 piezas de diseño/mes</li>
-                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Gestión de 2 redes (IG + FB)</li>
-                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> 1 campaña focalizada</li>
-                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Configuración técnica inicial</li>
-                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Reporte mensual de leads</li>
+                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Gestión de redes sociales (plataformas según estrategia)</li>
+                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Gestión de campañas (según estrategia)</li>
+                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Reporte mensual de resultados</li>
               </ul>
             </div>
 
@@ -405,7 +427,7 @@ export const Propuestas = () => {
             <h4 className="text-3xl font-light tracking-tight text-white group-hover:text-secondary transition-colors">Funnel de Crecimiento</h4>
             <div className="space-y-1">
               <p className="text-2xl font-light text-secondary group-hover:text-white transition-colors">$3.200.000 <span className="text-sm text-white/40">COP/mes</span></p>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta ($1.5M - $2.5M)</p>
+              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta (Monto según estrategia)</p>
             </div>
           </div>
 
@@ -414,11 +436,9 @@ export const Propuestas = () => {
               <h5 className="text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Incluye todo lo anterior más:</h5>
               <ul className="space-y-4 text-sm text-white/60 font-light group-hover:text-white/80 transition-colors duration-300">
                 <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> 30 piezas de diseño/mes</li>
-                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Gestión de 3 redes</li>
+                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Gestión de redes sociales (plataformas según estrategia)</li>
                 <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Community Management completo</li>
-                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Funnel de captación + Remarketing</li>
-                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Estudio de mercado inicial</li>
-                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Auditoría de competencia</li>
+                <li className="flex items-start gap-3"><span className="text-secondary drop-shadow-[0_0_8px_rgba(201,169,98,0.5)]">✓</span> Gestión de campañas (según estrategia) + Remarketing</li>
               </ul>
             </div>
           </div>
@@ -439,7 +459,7 @@ export const Propuestas = () => {
             <h4 className="text-3xl font-light tracking-tight text-white group-hover:text-secondary transition-colors">Ecosistema Premium</h4>
             <div className="space-y-1">
               <p className="text-2xl font-light text-white/90 group-hover:text-white transition-colors">$4.800.000 <span className="text-sm text-white/40">COP/mes</span></p>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta ($3M - $6M)</p>
+              <p className="text-[10px] text-white/40 uppercase tracking-widest">+ Inversión pauta (Monto según estrategia)</p>
             </div>
           </div>
 
@@ -448,7 +468,7 @@ export const Propuestas = () => {
               <h5 className="text-[10px] uppercase tracking-[0.2em] text-secondary font-bold">Incluye todo lo anterior más:</h5>
               <ul className="space-y-4 text-sm text-white/60 font-light">
                 <li className="flex items-start gap-3"><span className="text-secondary">✓</span> 44 piezas de diseño/mes</li>
-                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Gestión multicanal avanzada</li>
+                <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Gestión multicanal (plataformas según estrategia)</li>
                 <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Crisis management y reputación</li>
                 <li className="flex items-start gap-3"><span className="text-secondary">✓</span> Ecosistema de pauta completo</li>
                 <li className="flex items-start gap-3 font-medium text-white/90 bg-white/5 px-2 py-1 rounded"><span className="text-secondary">✓</span> Landing Page (Web) INCLUIDA</li>
@@ -482,14 +502,13 @@ export const Propuestas = () => {
               {[
                 { name: "Fee Mensual", b: "$1.800.000", i: "$3.200.000", a: "$4.800.000" },
                 { name: "Piezas de diseño/mes", b: "16", i: "30", a: "44" },
-                { name: "Redes gestionadas", b: "2", i: "3", a: "4+" },
+                { name: "Redes gestionadas", b: "Según estrategia", i: "Según estrategia", a: "Según estrategia" },
                 { name: "Community Management", b: "Básico", i: "Completo", a: "Avanzado" },
-                { name: "Estructura de Pauta", b: "1 campaña", i: "Funnel (2-3 camp.)", a: "Ecosistema completo" },
-                { name: "Inversión pauta sugerida", b: "$800k-$1.2M", i: "$1.5M-$2.5M", a: "$3M-$6M" },
+                { name: "Gestión de Campañas", b: "Según estrategia", i: "Según estrategia", a: "Ecosistema completo" },
+                { name: "Inversión pauta sugerida", b: "A definir", i: "A definir", a: "A definir" },
                 { name: "Landing Page (Web)", b: "Addon $699k", i: "Opcional", a: "Incluida" },
                 { name: "Chatbot IA", b: "—", i: "Opcional", a: "Incluido" },
-                { name: "Estudio de Mercado", b: "Opcional", i: "Incluido", a: "Incluido avanzado" },
-                { name: "Reportes", b: "Mensual", i: "Quincenal", a: "Semanal" },
+                { name: "Reportes", b: "Mensual de resultados", i: "Quincenal de resultados", a: "Semanal de resultados" },
               ].map((row, index) => (
                 <motion.tr
                   key={index}
@@ -717,7 +736,7 @@ export const Terminos = () => (
         {[
           { term: "Forma de pago", def: "50% anticipo para iniciar · 50% contra entrega/día 20 del mes" },
           { term: "Duración mínima", def: "Plan Básico: 3 meses (validación) · Intermedio/Avanzado: 6 meses (crecimiento)" },
-          { term: "Inversión en pauta", def: "Pagadera directamente a plataformas. Recomendado min $800.000 COP/mes" },
+          { term: "Inversión en pauta", def: "Pagadera directamente a plataformas. Monto sugerido a definir tras el Setup Inicial." },
           { term: "Entregas del cliente", def: "Acceso a taller para fotos, información técnica de servicios, protocolo de atención" },
           { term: "Propiedad intelectual", def: "Todo el material desarrollado pasa a propiedad del cliente tras el pago completo" },
           { term: "Confidencialidad", def: "Ambas partes se comprometen a tratar la información con total reserva" },
